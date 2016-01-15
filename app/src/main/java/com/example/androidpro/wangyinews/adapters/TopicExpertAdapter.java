@@ -30,8 +30,7 @@ public class TopicExpertAdapter extends RecyclerView.Adapter<TopicExpertAdapter.
     private List<TopicExpertEntity.DataEntity.LatestListEntity> latestList;
 
     public static final int DETAIL = 1;
-    public static final int CHANGESTATE = 2;
-    public static final int QA = 3;
+    public static final int QA = 2;
 
     public TopicExpertAdapter(Context context) {
         this.context = context;
@@ -53,12 +52,6 @@ public class TopicExpertAdapter extends RecyclerView.Adapter<TopicExpertAdapter.
                                 parent,
                                 false);
                 break;
-            case CHANGESTATE:
-                view = LayoutInflater.from(context)
-                        .inflate(R.layout.item_activity_topic_expert_changestate,
-                                parent,
-                                false);
-                break;
             case QA:
                 view = LayoutInflater.from(context)
                         .inflate(R.layout.item_activity_topic_expert_qa,
@@ -76,14 +69,12 @@ public class TopicExpertAdapter extends RecyclerView.Adapter<TopicExpertAdapter.
                 holder.detailUserIcon.setImageURI(Uri.parse(expertList.get(0).getHeadpicurl()));
                 holder.detailUserName.setText(expertList.get(0).getName());
                 holder.detailDescription.setText(expertList.get(0).getDescription());
-                break;
-            case CHANGESTATE:
                 holder.changestateQuestionCount.setText(expertList.get(0).getQuestionCount()+"提问");
                 holder.changestateAnswerCount.setText(expertList.get(0).getAnswerCount()+"回复");
                 break;
             case QA:
-                holder.qaQuestionContent.setText(hotList.get(position-2).getQuestion().getContent());
-                holder.qaAnswerContent.setText(hotList.get(position-2).getAnswer().getContent());
+                holder.qaQuestionContent.setText(hotList.get(position-1).getQuestion().getContent());
+                holder.qaAnswerContent.setText(hotList.get(position-1).getAnswer().getContent());
                 break;
         }
     }
@@ -97,8 +88,6 @@ public class TopicExpertAdapter extends RecyclerView.Adapter<TopicExpertAdapter.
     public int getItemViewType(int position) {
         if (position == 0) {
             return DETAIL;
-        } else if (position == 1) {
-            return CHANGESTATE;
         } else {
             return QA;
         }
@@ -145,8 +134,6 @@ public class TopicExpertAdapter extends RecyclerView.Adapter<TopicExpertAdapter.
                     detailTitle = ((TextView) itemView.findViewById(R.id.textview_topic_expert_detail_title));
                     detailDescription = (TextView)itemView.findViewById(R.id.textview_topic_expert_detail_description);
 
-                    break;
-                case CHANGESTATE:
                     changestateQuestionCount = ((TextView) itemView.findViewById(R.id.textview_topic_expert_changestate_question_count));
                     changestateAnswerCount = ((TextView) itemView.findViewById(R.id.textview_topic_expert_changestate_answer_count));
                     switchChangestate = ((Switch) itemView.findViewById(R.id.switch_topic_expert_changestate));
