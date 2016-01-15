@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="2dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginTop="8dp">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardview_topic_click"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+
+        app:cardCornerRadius="2dp"
+        app:cardElevation="4dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="8dp">
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/imageview_topic_expert_detail_user_icon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="2dp"
+                app:placeholderImage="@color/Black"
+                app:roundAsCircle="true" />
+
+            <LinearLayout
+                android:id="@+id/linear_topic_expert_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/imageview_topic_expert_detail_user_icon">
+
+                <TextView
+                    android:id="@+id/textview_topic_expert_detail_user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="name"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:text="|"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/textview_topic_expert_detail_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:text="title"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/linear_topic_expert_detail"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/imageview_topic_expert_detail_user_icon"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textview_topic_expert_detail_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="2"
+                    android:text="description" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/btn_topic_expert_text_showmore"
+                    android:button="@null" />
+            </LinearLayout>
+        </RelativeLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textview_topic_expert_changestate_question_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="提问" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="·" />
+
+        <TextView
+            android:id="@+id/textview_topic_expert_changestate_answer_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="回复" />
+
+        <Switch
+            android:id="@+id/switch_topic_expert_changestate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/White"
+            android:textOff="最新"
+            android:textOn="最热"
+            android:thumb="@mipmap/switch_on"
+            android:track="@mipmap/switch_off" />
+    </LinearLayout>
+
+</LinearLayout>

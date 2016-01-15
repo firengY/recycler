@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.androidpro.wangyinews.MainActivity">
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+
+    <TextView
+        android:background="@color/colorDivision"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+   <RadioGroup
+       android:paddingTop="3dp"
+       android:id="@+id/bottomtab"
+       android:layout_gravity="bottom"
+       android:orientation="horizontal"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+       <!--默认选中第一个-->
+       <RadioButton
+           android:id="@+id/rb_news"
+           android:checked="true"
+           android:text="@string/news_activity_main"
+           android:drawableTop="@drawable/selector_news_activity_main"
+           style="@style/rb_mainactivity" />
+       <RadioButton
+           android:id="@+id/rb_read"
+           android:text="@string/read_activity_main"
+           android:drawableTop="@drawable/selector_read_activity_main"
+           style="@style/rb_mainactivity"
+           />
+       <RadioButton
+           android:id="@+id/rb_seeAndHear"
+           android:text="@string/seeAndHear_activity_main"
+           android:drawableTop="@drawable/selector_seeandhear_activity_main"
+           style="@style/rb_mainactivity"/>
+       <RadioButton
+           android:id="@+id/rb_topics"
+           android:text="@string/topics_activity_main"
+           android:drawableTop="@drawable/selector_topics_activity_main"
+           style="@style/rb_mainactivity" />
+       <RadioButton
+           android:id="@+id/rb_myself"
+           android:text="@string/myself_activity_main"
+           android:drawableTop="@drawable/selector_myself_activity_main"
+           style="@style/rb_mainactivity" />
+   </RadioGroup>
+</LinearLayout>
